@@ -590,3 +590,4 @@ Essa taxa é elevada e pode gerar uma projeção pouco realista. O resultado dev
 - Novos edge cases devem ser adicionados sempre que houver comportamento inesperado.
 - Alterações relevantes no system prompt devem ser versionadas.
 - O conteúdo do prompt deve permanecer alinhado à documentação, à base de conhecimento e ao código implementado.
+- Foi percebido diferenças significativas no uso de diferentes LLMs (copilot, cloud e chat gpt) com base nas suas respostas.
