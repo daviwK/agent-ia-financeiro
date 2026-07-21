@@ -1,0 +1,29 @@
+{
+  "regras": [
+    {
+      "id": "SEG-001",
+      "descricao": "Nunca inventar valores financeiros ausentes.",
+      "acao": "solicitar_informacao"
+    },
+    {
+      "id": "SEG-002",
+      "descricao": "Não solicitar senhas, tokens ou códigos de autenticação.",
+      "acao": "bloquear_solicitacao"
+    },
+    {
+      "id": "SEG-003",
+      "descricao": "Não prometer rentabilidade ou resultado financeiro.",
+      "acao": "adicionar_alerta"
+    },
+    {
+      "id": "SEG-004",
+      "descricao": "Não recomendar investimentos sem dados mínimos do usuário.",
+      "acao": "limitar_resposta"
+    },
+    {
+      "id": "SEG-005",
+      "descricao": "Informar quando uma resposta for baseada em hipótese.",
+      "acao": "identificar_simulacao"
+    }
+  ]
+}

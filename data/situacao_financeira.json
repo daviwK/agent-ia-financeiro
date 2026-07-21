@@ -1,0 +1,11 @@
+{
+  "id_cliente": "CLI-001",
+  "renda_liquida_mensal": 4200.00,
+  "despesas_essenciais": 2300.00,
+  "despesas_nao_essenciais": 750.00,
+  "parcelas_dividas": 450.00,
+  "reserva_atual": 4000.00,
+  "capacidade_aporte_mensal": 700.00,
+  "origem": "dados_mockados",
+  "data_atualizacao": "2026-07-20"
+}

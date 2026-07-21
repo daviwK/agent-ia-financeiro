@@ -1,0 +1,27 @@
+{
+  "id_cliente": "CLI-001",
+  "metas": [
+    {
+      "id_meta": "META-001",
+      "nome": "Reserva de emergência",
+      "categoria": "seguranca_financeira",
+      "valor_alvo": 18000.00,
+      "valor_acumulado": 4000.00,
+      "prazo_meses": 20,
+      "aporte_mensal_planejado": 700.00,
+      "prioridade": "alta",
+      "status": "em_andamento"
+    },
+    {
+      "id_meta": "META-002",
+      "nome": "Viagem",
+      "categoria": "lazer",
+      "valor_alvo": 8000.00,
+      "valor_acumulado": 500.00,
+      "prazo_meses": 24,
+      "aporte_mensal_planejado": 200.00,
+      "prioridade": "media",
+      "status": "em_planejamento"
+    }
+  ]
+}
