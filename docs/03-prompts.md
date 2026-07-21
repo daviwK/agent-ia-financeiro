@@ -59,7 +59,7 @@ RESULTADO CALCULADO:
 Valor produzido pelo motor de cálculos.
 
 CONHECIMENTO RECUPERADO:
-Informação obtida da base educacional ou de fonte confiável[`docs/02-base-conhecimento.md`](./docs/02-base-conhecimento.md).
+Informação obtida da base educacional ou de fonte confiável. [`docs/02-base-conhecimento.md`](./docs/02-base-conhecimento.md)
 
 HIPÓTESE:
 Premissa adotada por falta de dado confirmado.
