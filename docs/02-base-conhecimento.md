@@ -55,11 +55,39 @@ Novos arquivos poderão ser adicionados futuramente, como:
 
 ### `perfil_cliente.json`
 
+```json
+{
+  "id_cliente": "CLI-001",
+  "nome": "João Silva",
+  "idade": 30,
+  "situacao_profissional": "assalariado",
+  "dependentes": 1,
+  "estabilidade_renda": "alta",
+  "conhecimento_financeiro": "iniciante",
+  "origem": "dados_mockados",
+  "data_atualizacao": "2026-07-20"
+}
+```
+
 Esse arquivo permite que o agente adapte a comunicação e contextualize o planejamento financeiro.
 
 ---
 
 ### `situacao_financeira.json`
+
+```json
+{
+  "id_cliente": "CLI-001",
+  "renda_liquida_mensal": 4200.00,
+  "despesas_essenciais": 2300.00,
+  "despesas_nao_essenciais": 750.00,
+  "parcelas_dividas": 450.00,
+  "reserva_atual": 4000.00,
+  "capacidade_aporte_mensal": 700.00,
+  "origem": "dados_mockados",
+  "data_atualizacao": "2026-07-20"
+}
+```
 
 Esse arquivo é utilizado para:
 
@@ -72,6 +100,36 @@ Esse arquivo é utilizado para:
 ---
 
 ### `metas_financeiras.json`
+
+```json
+{
+  "id_cliente": "CLI-001",
+  "metas": [
+    {
+      "id_meta": "META-001",
+      "nome": "Reserva de emergência",
+      "categoria": "seguranca_financeira",
+      "valor_alvo": 18000.00,
+      "valor_acumulado": 4000.00,
+      "prazo_meses": 20,
+      "aporte_mensal_planejado": 700.00,
+      "prioridade": "alta",
+      "status": "em_andamento"
+    },
+    {
+      "id_meta": "META-002",
+      "nome": "Viagem",
+      "categoria": "lazer",
+      "valor_alvo": 8000.00,
+      "valor_acumulado": 500.00,
+      "prazo_meses": 24,
+      "aporte_mensal_planejado": 200.00,
+      "prioridade": "media",
+      "status": "em_planejamento"
+    }
+  ]
+}
+```
 
 Esse arquivo permite que o agente:
 
@@ -86,6 +144,17 @@ Esse arquivo permite que o agente:
 
 ### `transacoes.csv`
 
+```csv
+data,descricao,categoria,tipo,valor,essencial
+2026-07-01,Salário,Renda,receita,4200.00,false
+2026-07-02,Aluguel,Moradia,despesa,1200.00,true
+2026-07-03,Supermercado,Alimentação,despesa,650.00,true
+2026-07-05,Conta de energia,Moradia,despesa,180.00,true
+2026-07-06,Streaming,Assinaturas,despesa,55.90,false
+2026-07-10,Aporte para reserva,Reserva,aporte,500.00,false
+2026-07-15,Parcela do cartão,Dívidas,despesa,450.00,true
+```
+
 Esse arquivo é utilizado para:
 
 - categorizar entradas e saídas;
@@ -98,6 +167,37 @@ Esse arquivo é utilizado para:
 
 ### `conteudos_educacionais.json`
 
+```json
+{
+  "conteudos": [
+    {
+      "id": "EDU-001",
+      "tema": "metas_financeiras",
+      "titulo": "Estrutura de uma meta financeira",
+      "conteudo": "Uma meta financeira deve possuir objetivo, valor, prazo, prioridade, valor já acumulado e capacidade mensal de aporte.",
+      "tipo": "educacional",
+      "fonte": "Base conceitual do Nexo Financeiro"
+    },
+    {
+      "id": "EDU-002",
+      "tema": "reserva_emergencia",
+      "titulo": "Finalidade da reserva de emergência",
+      "conteudo": "A reserva de emergência protege o orçamento contra despesas inesperadas e redução temporária da renda.",
+      "tipo": "educacional",
+      "fonte": "Base conceitual do Nexo Financeiro"
+    },
+    {
+      "id": "EDU-003",
+      "tema": "planejamento",
+      "titulo": "Revisão periódica",
+      "conteudo": "O planejamento financeiro deve ser revisado quando houver mudanças relevantes na renda, nas despesas, nas dívidas ou nas metas.",
+      "tipo": "educacional",
+      "fonte": "Base conceitual do Nexo Financeiro"
+    }
+  ]
+}
+```
+
 Esse arquivo fornece explicações e orientações educacionais ao agente.
 
 Seu conteúdo deve ser consultado de acordo com o tema da pergunta.
@@ -105,6 +205,38 @@ Seu conteúdo deve ser consultado de acordo com o tema da pergunta.
 ---
 
 ### `regras_seguranca.json`
+
+```json
+{
+  "regras": [
+    {
+      "id": "SEG-001",
+      "descricao": "Nunca inventar valores financeiros ausentes.",
+      "acao": "solicitar_informacao"
+    },
+    {
+      "id": "SEG-002",
+      "descricao": "Não solicitar senhas, tokens ou códigos de autenticação.",
+      "acao": "bloquear_solicitacao"
+    },
+    {
+      "id": "SEG-003",
+      "descricao": "Não prometer rentabilidade ou resultado financeiro.",
+      "acao": "adicionar_alerta"
+    },
+    {
+      "id": "SEG-004",
+      "descricao": "Não recomendar investimentos sem dados mínimos do usuário.",
+      "acao": "limitar_resposta"
+    },
+    {
+      "id": "SEG-005",
+      "descricao": "Informar quando uma resposta for baseada em hipótese.",
+      "acao": "identificar_simulacao"
+    }
+  ]
+}
+```
 
 Esse arquivo funciona como uma camada de proteção para reduzir:
 
@@ -203,6 +335,42 @@ A estratégia recomendada é separar o carregamento em três grupos.
 - parâmetros de simulação;
 - regras de planejamento;
 - regras de validação.
+
+---
+
+## Exemplo de Carregamento em Python
+
+```python
+import json
+from pathlib import Path
+
+import pandas as pd
+
+DATA_DIR = Path("data")
+
+
+def carregar_json(caminho: Path) -> dict:
+    if not caminho.exists():
+        return {}
+
+    with caminho.open("r", encoding="utf-8") as arquivo:
+        return json.load(arquivo)
+
+
+def carregar_csv(caminho: Path) -> pd.DataFrame:
+    if not caminho.exists():
+        return pd.DataFrame()
+
+    return pd.read_csv(caminho)
+
+
+perfil = carregar_json(DATA_DIR / "perfil_cliente.json")
+situacao = carregar_json(DATA_DIR / "situacao_financeira.json")
+metas = carregar_json(DATA_DIR / "metas_financeiras.json")
+conteudos = carregar_json(DATA_DIR / "conteudos_educacionais.json")
+regras = carregar_json(DATA_DIR / "regras_seguranca.json")
+transacoes = carregar_csv(DATA_DIR / "transacoes.csv")
+```
 
 ---
 
@@ -349,6 +517,36 @@ Na primeira versão, a aplicação pode recuperar conteúdos por:
 - prioridade;
 - tipo de orientação.
 
+Exemplo:
+
+```python
+def buscar_conteudo_por_tema(base: dict, tema: str) -> list:
+    return [
+        item
+        for item in base.get("conteudos", [])
+        if item.get("tema") == tema
+    ]
+```
+
+Em versões futuras, pode ser implementado um sistema RAG.
+
+```text
+Pergunta do usuário
+        ↓
+Identificação da intenção
+        ↓
+Busca na base de conhecimento
+        ↓
+Seleção dos conteúdos relevantes
+        ↓
+Montagem do contexto
+        ↓
+Geração da resposta
+        ↓
+Validação
+```
+
+---
 
 ## Regras de Uso dos Dados
 
