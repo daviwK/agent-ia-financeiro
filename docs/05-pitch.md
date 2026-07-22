@@ -125,5 +125,5 @@ Obrigado!
 # Link do Vídeo
 
 ```text
-[https://youtu.be/BcEzBzXkVwQ?is=hrR4Of6NXk1AbedY]
+https://youtu.be/BcEzBzXkVwQ?is=hrR4Of6NXk1AbedY
 ```
