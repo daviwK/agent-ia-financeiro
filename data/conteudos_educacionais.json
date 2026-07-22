@@ -3,26 +3,20 @@
     {
       "id": "EDU-001",
       "tema": "metas_financeiras",
-      "titulo": "Estrutura de uma meta financeira",
-      "conteudo": "Uma meta financeira deve possuir objetivo, valor, prazo, prioridade, valor já acumulado e capacidade mensal de aporte.",
-      "tipo": "educacional",
-      "fonte": "Base conceitual do Nexo Financeiro"
+      "titulo": "Estrutura de uma meta",
+      "conteudo": "Uma meta financeira deve possuir objetivo, valor, prazo, prioridade e capacidade de aporte."
     },
     {
       "id": "EDU-002",
       "tema": "reserva_emergencia",
-      "titulo": "Finalidade da reserva de emergência",
-      "conteudo": "A reserva de emergência protege o orçamento contra despesas inesperadas e redução temporária da renda.",
-      "tipo": "educacional",
-      "fonte": "Base conceitual do Nexo Financeiro"
+      "titulo": "Reserva de emergência",
+      "conteudo": "A reserva de emergência ajuda a proteger o orçamento contra imprevistos e redução temporária de renda."
     },
     {
       "id": "EDU-003",
       "tema": "planejamento",
       "titulo": "Revisão periódica",
-      "conteudo": "O planejamento financeiro deve ser revisado quando houver mudanças relevantes na renda, nas despesas, nas dívidas ou nas metas.",
-      "tipo": "educacional",
-      "fonte": "Base conceitual do Nexo Financeiro"
+      "conteudo": "O planejamento deve ser revisado quando renda, despesas, dívidas ou objetivos mudarem."
     }
   ]
 }

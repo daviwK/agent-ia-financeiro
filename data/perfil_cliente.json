@@ -4,7 +4,6 @@
   "idade": 30,
   "situacao_profissional": "assalariado",
   "dependentes": 1,
-  "estabilidade_renda": "alta",
   "conhecimento_financeiro": "iniciante",
-  "data_atualizacao": "2026-07-20"
+  "origem": "dados_mockados"
 }
