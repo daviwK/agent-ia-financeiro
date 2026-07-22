@@ -125,5 +125,5 @@ Obrigado!
 # Link do Vídeo
 
 ```text
-[Inserir link do YouTube, Loom ou Google Drive]
+[https://youtu.be/BcEzBzXkVwQ?is=hrR4Of6NXk1AbedY]
 ```
