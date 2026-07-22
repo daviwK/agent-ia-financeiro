@@ -2,7 +2,10 @@
 
 ## Contexto
 
-O **Nexus Din** é um assistente financeiro educativo desenvolvido para apoiar o planejamento de metas de curto, médio e longo prazo.
+O **Nexus Din** é um assistente financeiro educativo desenvolvido para apoiar o planejamento de metas de curto, médio e longo prazo. Independentemente do nível de conhecimento financeiro, o Nexus Din foi programado para ser acolhedor e explicativo.
+
+**OBSERVAÇÃO IMPORTANTE:** 
+O projeto poderá ter modificações futuras como: compactação de arquivos pesados; executavel para ser instalado no PC em diferentes sistemas operacionais; aplicativo android (e talvez IOS); melhora no tempo das respostas; possibilidade de consulta sem internet de maneira otimizada.
 
 O projeto utiliza **Python**, **Streamlit** e **Ollama** para criar uma aplicação funcional com modelo de linguagem executado localmente, sem necessidade de API paga.
 
