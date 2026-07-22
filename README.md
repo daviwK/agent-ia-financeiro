@@ -1,44 +1,197 @@
-# Nexus Din
+# 💰 Nexus Din — Agente Financeiro com IA Generativa Local
 
-Assistente financeiro educativo desenvolvido em **Python**, com interface em **Streamlit** e modelo de linguagem executado localmente pelo **Ollama**.
+## Contexto
 
-O projeto foi criado como um protótipo simples para:
+O **Nexus Din** é um assistente financeiro educativo desenvolvido para apoiar o planejamento de metas de curto, médio e longo prazo.
 
-- visualizar a situação financeira;
-- analisar receitas e despesas;
-- acompanhar metas;
-- estimar aportes mensais;
-- consultar conteúdos de educação financeira;
-- conversar com uma IA local;
-- estudar Python, Streamlit, JSON, CSV e IA generativa.
+O projeto utiliza **Python**, **Streamlit** e **Ollama** para criar uma aplicação funcional com modelo de linguagem executado localmente, sem necessidade de API paga.
+
+O agente foi desenvolvido para:
+
+- **Organizar metas financeiras**
+- **Analisar receitas e despesas**
+- **Calcular saldo mensal e comprometimento da renda**
+- **Estimar aportes necessários**
+- **Acompanhar o progresso das metas**
+- **Explicar conceitos financeiros**
+- **Personalizar respostas com base nos dados disponíveis**
+- **Reduzir alucinações por meio de regras e contexto estruturado**
+- **Preservar a privacidade por meio do processamento local**
 
 > [!IMPORTANT]
-> Projeto educacional. Não substitui consultoria financeira, contábil, jurídica, tributária ou de investimentos.
+> O Nexus Din é uma ferramenta educacional e experimental. Ele não substitui consultoria financeira, contábil, jurídica, tributária ou de investimentos.
 
 ---
 
-## Tecnologias
+## O Que o Projeto Entrega
 
-- Python
-- Streamlit
-- Ollama
-- Pandas
-- JSON
-- CSV
-- Git e GitHub
+### 1. Documentação do Agente
+
+A documentação descreve o funcionamento completo do Nexus Din:
+
+- **Caso de Uso:** planejamento de metas financeiras
+- **Persona e Tom de Voz:** consultivo, educativo, acessível e responsável
+- **Arquitetura:** integração entre Streamlit, Python, arquivos locais e Ollama
+- **Segurança:** regras para evitar invenção de dados e recomendações inadequadas
+- **Limitações:** definição clara do que o agente não faz
+
+📄 **Documentação:** [`docs/01-documentacao-agente.md`](./docs/01-documentacao-agente.md)
 
 ---
 
-## Funcionamento
+### 2. Base de Conhecimento
+
+A pasta [`data/`](./data/) contém dados fictícios utilizados para alimentar o agente.
+
+| Arquivo | Formato | Utilização |
+|---------|---------|------------|
+| `perfil_cliente.json` | JSON | Armazena o perfil fictício do cliente |
+| `situacao_financeira.json` | JSON | Armazena renda, despesas, dívidas e reserva |
+| `metas_financeiras.json` | JSON | Armazena metas, prazos e progresso |
+| `transacoes.csv` | CSV | Armazena receitas, despesas e aportes |
+| `conteudos_educacionais.json` | JSON | Fornece conteúdos de educação financeira |
+| `regras_seguranca.json` | JSON | Define restrições e comportamentos obrigatórios |
+
+Os dados são mockados e utilizados apenas para desenvolvimento, demonstração e testes.
+
+📄 **Documentação:** [`docs/02-base-conhecimento.md`](./docs/02-base-conhecimento.md)
+
+---
+
+### 3. Prompts do Agente
+
+O comportamento do Nexus Din é definido pelo arquivo:
 
 ```text
-Usuário abre o aplicativo
+prompts/system_prompt.txt
+```
+
+O prompt contém:
+
+- identidade do agente;
+- objetivo;
+- regras de segurança;
+- limitações;
+- tom de comunicação;
+- formato esperado das respostas;
+- orientações contra alucinação;
+- regras para dados ausentes;
+- regras para investimentos;
+- exemplos de comportamento esperado.
+
+📄 **Documentação:** [`docs/03-prompts.md`](./docs/03-prompts.md)
+
+---
+
+### 4. Aplicação Funcional
+
+O protótipo foi desenvolvido com:
+
+- **Streamlit** para a interface;
+- **Python** para lógica e cálculos;
+- **Ollama** para execução local do modelo;
+- **Pandas** para leitura e análise de transações;
+- **JSON e CSV** como base de dados local.
+
+A aplicação possui:
+
+- chatbot interativo;
+- histórico recente de conversa;
+- resumo financeiro;
+- cálculo de saldo mensal;
+- cálculo de comprometimento da renda;
+- visualização de metas;
+- barras de progresso;
+- estimativa de aporte mensal;
+- tabela de transações;
+- gráfico de despesas por categoria;
+- tratamento básico de erros.
+
+📁 **Código:** [`src/`](./src/)
+
+---
+
+### 5. Avaliação e Métricas
+
+O projeto pode ser avaliado por meio de:
+
+- precisão dos cálculos;
+- coerência das respostas;
+- utilização correta dos dados;
+- taxa de respostas seguras;
+- ausência de informações inventadas;
+- capacidade de identificar dados ausentes;
+- alinhamento com o perfil do cliente;
+- clareza das explicações;
+- tempo de resposta do modelo local.
+
+📄 **Documentação:** [`docs/04-metricas.md`](./docs/04-metricas.md)
+
+---
+
+### 6. Pitch
+
+O projeto inclui um roteiro para apresentação do Nexus Din.
+
+O pitch deve responder:
+
+- qual problema o agente resolve;
+- como funciona;
+- quais tecnologias utiliza;
+- por que o processamento local é relevante;
+- como o projeto pode evoluir.
+
+📄 **Documentação:** [`docs/05-pitch.md`](./docs/05-pitch.md)
+
+---
+
+## Tecnologias Utilizadas
+
+Todas as tecnologias principais possuem opções gratuitas.
+
+| Categoria | Tecnologia |
+|-----------|------------|
+| **Linguagem** | [Python](https://www.python.org/) |
+| **Interface** | [Streamlit](https://streamlit.io/) |
+| **Modelo local** | [Ollama](https://ollama.com/) |
+| **Modelo inicial** | `gemma3:4b` |
+| **Manipulação de dados** | [Pandas](https://pandas.pydata.org/) |
+| **Dados estruturados** | JSON e CSV |
+| **Versionamento** | [Git](https://git-scm.com/) |
+| **Repositório** | [GitHub](https://github.com/) |
+| **Diagramas** | [Mermaid](https://mermaid.js.org/) |
+
+---
+
+## Arquitetura
+
+```mermaid
+flowchart TD
+    A[Usuário] -->|Mensagem| B[Streamlit]
+    B --> C[app.py]
+    C --> D[agente.py]
+    D --> E[Arquivos JSON e CSV]
+    E --> D
+    D --> F[Motor de Cálculos Python]
+    F --> D
+    D --> G[Prompt e Contexto]
+    G --> H[Ollama Local]
+    H --> D
+    D --> C
+    C --> B
+    B --> I[Resposta ao Usuário]
+```
+
+### Fluxo Simplificado
+
+```text
+Usuário abre a aplicação
         ↓
 Streamlit executa src/app.py
         ↓
 app.py chama funções de src/agente.py
         ↓
-agente.py carrega JSON e CSV
+agente.py carrega dados JSON e CSV
         ↓
 Python calcula indicadores financeiros
         ↓
@@ -51,72 +204,68 @@ Ollama gera a resposta localmente
 Streamlit mostra a resposta
 ```
 
-A IA não lê os arquivos diretamente. O Python carrega, organiza e transforma os dados em texto antes de enviá-los ao Ollama.
-
 ---
 
-## Estrutura
+## Estrutura do Repositório
 
 ```text
-agent-ia-financeiro/
-├── src/
-│   ├── app.py
-│   ├── agente.py
-│   ├── config.py
-│   └── requirements.txt
-├── data/
+📁 agent-ia-financeiro/
+│
+├── 📄 README.md
+├── 📄 LICENSE
+├── 📄 .gitignore
+│
+├── 📁 data/
 │   ├── perfil_cliente.json
 │   ├── situacao_financeira.json
 │   ├── metas_financeiras.json
 │   ├── transacoes.csv
 │   ├── conteudos_educacionais.json
 │   └── regras_seguranca.json
-├── prompts/
+│
+├── 📁 docs/
+│   ├── 01-documentacao-agente.md
+│   ├── 02-base-conhecimento.md
+│   ├── 03-prompts.md
+│   ├── 04-metricas.md
+│   └── 05-pitch.md
+│
+├── 📁 prompts/
 │   └── system_prompt.txt
-├── .gitignore
-├── README.md
-└── LICENSE
+│
+├── 📁 src/
+│   ├── app.py
+│   ├── agente.py
+│   ├── config.py
+│   └── requirements.txt
+│
+└── 📁 assets/
+    └── ...
 ```
-
-| Arquivo | Função |
-|---|---|
-| `src/app.py` | Interface Streamlit |
-| `src/agente.py` | Dados, cálculos e comunicação com Ollama |
-| `src/config.py` | Caminhos e nome do modelo |
-| `src/requirements.txt` | Dependências Python |
-| `data/perfil_cliente.json` | Perfil fictício |
-| `data/situacao_financeira.json` | Renda, despesas e reserva |
-| `data/metas_financeiras.json` | Metas e progresso |
-| `data/transacoes.csv` | Receitas, despesas e aportes |
-| `data/conteudos_educacionais.json` | Base educacional |
-| `data/regras_seguranca.json` | Regras do agente |
-| `prompts/system_prompt.txt` | Personalidade e limites |
-| `.gitignore` | Arquivos ignorados pelo Git |
-| `README.md` | Documentação principal |
 
 ---
 
-# Instalação e execução
+# Como Instalar e Executar
 
-## Requisitos
+## Pré-requisitos
 
-Instale:
+Antes de rodar o projeto, instale:
 
 1. Python 3;
 2. Git;
 3. Ollama;
-4. um modelo local;
-5. as bibliotecas do projeto.
+4. modelo local;
+5. bibliotecas do projeto.
 
 ---
 
-## 1. Python
+## 1. Instalar o Python
 
-Baixe em:
+Baixe no site oficial:
 
-- https://www.python.org/downloads/
+- [Python Downloads](https://www.python.org/downloads/)
 
-No Windows, marque:
+Durante a instalação no Windows, marque:
 
 ```text
 Add Python to PATH
@@ -136,11 +285,11 @@ py --version
 
 ---
 
-## 2. Git
+## 2. Instalar o Git
 
 Baixe em:
 
-- https://git-scm.com/downloads
+- [Git Downloads](https://git-scm.com/downloads)
 
 Teste:
 
@@ -150,15 +299,15 @@ git --version
 
 ---
 
-## 3. Ollama
+## 3. Instalar o Ollama
 
 Baixe em:
 
-- https://ollama.com/download
+- [Ollama Download](https://ollama.com/download)
 
 No Windows:
 
-- https://ollama.com/download/windows
+- [Ollama para Windows](https://ollama.com/download/windows)
 
 Teste:
 
@@ -167,11 +316,11 @@ ollama --version
 ```
 
 > [!NOTE]
-> O aplicativo Ollama e a biblioteca Python `ollama` são componentes diferentes. Ambos precisam estar instalados.
+> O programa Ollama e a biblioteca Python `ollama` são componentes diferentes. Os dois precisam estar instalados.
 
 ---
 
-## 4. Clonar o projeto
+## 4. Clonar o Repositório
 
 ```bash
 git clone https://github.com/SEU-USUARIO/agent-ia-financeiro.git
@@ -183,13 +332,11 @@ Entre na pasta:
 cd agent-ia-financeiro
 ```
 
-Troque `SEU-USUARIO` pelo nome da sua conta.
-
-Caso tenha baixado um ZIP, extraia e abra o terminal dentro da pasta.
+Substitua `SEU-USUARIO` pelo seu nome de usuário no GitHub.
 
 ---
 
-## 5. Ambiente virtual
+## 5. Criar o Ambiente Virtual
 
 ### Windows — Prompt de Comando
 
@@ -224,7 +371,7 @@ python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-Quando ativo, o terminal costuma mostrar:
+Quando ativo, o terminal geralmente mostra:
 
 ```text
 (.venv)
@@ -240,7 +387,7 @@ python -m pip install --upgrade pip
 
 ---
 
-## 7. Instalar dependências
+## 7. Instalar as Dependências
 
 ```bash
 python -m pip install -r src/requirements.txt
@@ -260,17 +407,17 @@ Instalação manual:
 python -m pip install streamlit ollama pandas
 ```
 
-Teste a biblioteca Python do Ollama:
+Teste:
 
 ```bash
-python -c "import ollama; print('Biblioteca Ollama instalada corretamente')"
+python -c "import ollama; import streamlit; import pandas; print('Dependências instaladas corretamente')"
 ```
 
 ---
 
-## 8. Baixar o modelo local
+## 8. Baixar o Modelo Local
 
-O projeto usa inicialmente:
+O modelo configurado inicialmente é:
 
 ```text
 gemma3:4b
@@ -300,7 +447,11 @@ Para sair:
 /bye
 ```
 
-O nome deve ser igual ao configurado em `src/config.py`:
+O nome deve ser igual ao valor presente em:
+
+```text
+src/config.py
+```
 
 ```python
 OLLAMA_MODEL = "gemma3:4b"
@@ -310,7 +461,7 @@ OLLAMA_MODEL = "gemma3:4b"
 
 ## 9. Iniciar o Ollama
 
-Normalmente ele inicia automaticamente no Windows.
+Normalmente ele inicia automaticamente.
 
 Caso necessário:
 
@@ -326,7 +477,7 @@ http://localhost:11434
 
 ---
 
-## 10. Executar o Nexus Din
+## 10. Executar a Aplicação
 
 ```bash
 python -m streamlit run src/app.py
@@ -338,9 +489,9 @@ Alternativa:
 streamlit run src/app.py
 ```
 
-A primeira forma é recomendada porque usa o mesmo Python do ambiente virtual.
+A primeira opção é recomendada porque garante o uso do mesmo Python do ambiente virtual.
 
-Endereço padrão:
+Endereço local padrão:
 
 ```text
 http://localhost:8501
@@ -348,35 +499,27 @@ http://localhost:8501
 
 ---
 
-## Comandos rápidos — PowerShell
+## Comandos Rápidos para Windows
 
 ```powershell
 cd C:\caminho\para\agent-ia-financeiro
+
 python -m venv .venv
+
 .\.venv\Scripts\Activate.ps1
-python -m pip install --upgrade pip
-python -m pip install -r src\requirements.txt
-ollama pull gemma3:4b
-python -m streamlit run src\app.py
-```
 
-## Comandos rápidos — Prompt de Comando
-
-```cmd
-cd C:\caminho\para\agent-ia-financeiro
-python -m venv .venv
-.venv\Scripts\activate
 python -m pip install --upgrade pip
+
 python -m pip install -r src\requirements.txt
+
 ollama pull gemma3:4b
+
 python -m streamlit run src\app.py
 ```
 
 ---
 
-# Como usar
-
-Exemplos:
+## Exemplos de Perguntas
 
 ```text
 Quanto sobra da minha renda por mês?
@@ -398,11 +541,15 @@ Quais gastos posso revisar?
 Explique o que é reserva de emergência.
 ```
 
+```text
+Qual é o progresso da minha meta?
+```
+
 ---
 
-# Personalização
+# Como Personalizar
 
-## Alterar o perfil
+## Alterar o Perfil
 
 Arquivo:
 
@@ -422,7 +569,9 @@ data/perfil_cliente.json
 }
 ```
 
-## Alterar renda e despesas
+---
+
+## Alterar a Situação Financeira
 
 Arquivo:
 
@@ -440,7 +589,7 @@ data/situacao_financeira.json
 }
 ```
 
-Use:
+Use números:
 
 ```json
 4200.00
@@ -452,7 +601,9 @@ Não use:
 "R$ 4.200,00"
 ```
 
-## Adicionar meta
+---
+
+## Adicionar uma Meta
 
 Arquivo:
 
@@ -472,7 +623,9 @@ data/metas_financeiras.json
 }
 ```
 
-## Adicionar transação
+---
+
+## Adicionar uma Transação
 
 Arquivo:
 
@@ -484,21 +637,15 @@ data/transacoes.csv
 2026-07-18,Academia,Saúde,despesa,120.00,false
 ```
 
-Cabeçalho obrigatório:
+Mantenha o cabeçalho:
 
 ```csv
 data,descricao,categoria,tipo,valor,essencial
 ```
 
-Tipos:
+---
 
-```text
-receita
-despesa
-aporte
-```
-
-## Trocar modelo
+## Trocar o Modelo
 
 Arquivo:
 
@@ -516,7 +663,9 @@ Depois:
 ollama pull qwen3:4b
 ```
 
-## Alterar comportamento
+---
+
+## Alterar a Personalidade
 
 Arquivo:
 
@@ -538,7 +687,33 @@ Quando uma meta não for viável, apresente alternativas.
 
 ---
 
-# Solução de problemas
+# Segurança e Anti-Alucinação
+
+O Nexus Din aplica medidas como:
+
+- uso de dados locais;
+- dados fictícios no protótipo;
+- cálculos realizados por Python;
+- regras no system prompt;
+- contexto estruturado;
+- proibição de inventar informações;
+- declaração de hipóteses;
+- limitação de recomendações;
+- proteção contra solicitações sensíveis.
+
+O agente não deve solicitar:
+
+- senhas;
+- tokens;
+- códigos de autenticação;
+- números completos de cartão;
+- credenciais bancárias;
+- chaves privadas;
+- dados de terceiros.
+
+---
+
+# Solução de Problemas
 
 ## `ModuleNotFoundError: No module named 'ollama'`
 
@@ -552,11 +727,7 @@ Teste:
 python -c "import ollama; print('OK')"
 ```
 
-Execute:
-
-```bash
-python -m streamlit run src/app.py
-```
+---
 
 ## `No module named 'streamlit'`
 
@@ -564,19 +735,25 @@ python -m streamlit run src/app.py
 python -m pip install streamlit
 ```
 
+---
+
 ## `No module named 'pandas'`
 
 ```bash
 python -m pip install pandas
 ```
 
-## `ollama` não é reconhecido
+---
+
+## Ollama não é reconhecido
 
 ```bash
 ollama --version
 ```
 
-Caso não funcione, instale o aplicativo Ollama e reabra o terminal.
+Caso não funcione, instale o programa Ollama e reabra o terminal.
+
+---
 
 ## Modelo não encontrado
 
@@ -584,6 +761,8 @@ Caso não funcione, instale o aplicativo Ollama e reabra o terminal.
 ollama pull gemma3:4b
 ollama list
 ```
+
+---
 
 ## Chat não responde
 
@@ -602,100 +781,62 @@ Teste:
 ollama run gemma3:4b
 ```
 
-## Streamlit usando outro Python
-
-```bash
-python -c "import sys; print(sys.executable)"
-python -m pip list
-python -m streamlit run src/app.py
-```
-
-## JSON inválido
-
-Correto:
-
-```json
-{
-  "renda": 4200.00,
-  "nome": "João"
-}
-```
-
-Incorreto:
-
-```json
-{
-  "renda": "R$ 4.200,00"
-  "nome": "João"
-}
-```
-
-## CSV incorreto
-
-Use o cabeçalho:
-
-```csv
-data,descricao,categoria,tipo,valor,essencial
-```
-
-Todas as linhas devem ter a mesma quantidade de colunas.
-
 ---
 
-# Segurança
-
-Não adicione:
-
-- senhas;
-- tokens;
-- números completos de cartão;
-- códigos de autenticação;
-- credenciais bancárias;
-- chaves privadas;
-- dados financeiros reais de terceiros.
-
-Antes de usar dados reais, implemente:
-
-- autenticação;
-- criptografia;
-- controle de acesso;
-- banco de dados seguro;
-- política de privacidade;
-- medidas compatíveis com a LGPD.
-
----
-
-# Limitações
+# Limitações Atuais
 
 O protótipo ainda não possui:
 
-- cadastro pela interface;
 - login;
 - banco de dados real;
 - múltiplos usuários;
 - criptografia;
-- categorização automática;
-- RAG completo;
-- validação avançada;
-- sincronização bancária;
+- integração bancária;
 - dados em tempo real;
-- persistência do chat após fechar o aplicativo.
+- RAG completo;
+- categorização automática;
+- persistência permanente do chat;
+- recomendação regulamentada de investimentos;
+- implantação online do modelo local.
 
 ---
 
-# Próximas melhorias
+# Próximas Melhorias
 
-- formulário de cadastro;
-- inclusão de metas pela interface;
-- inclusão de transações pela interface;
-- persistência com SQLite;
-- busca por tema;
-- validações;
-- testes automatizados;
-- relatórios;
-- exportação em PDF;
-- histórico das metas;
-- múltiplos perfis.
+1. Criar formulário de cadastro financeiro
+2. Permitir adicionar metas pela interface
+3. Permitir adicionar transações pela interface
+4. Salvar dados com SQLite
+5. Criar busca por tema na base
+6. Implementar validações
+7. Criar testes automatizados
+8. Gerar relatórios
+9. Exportar relatórios em PDF
+10. Criar histórico de evolução das metas
+11. Adicionar múltiplos perfis
+12. Melhorar a segurança
+
+---
+
+# Licença
+
+Este projeto utiliza a **Licença MIT**.
+
+Ela permite:
+
+- uso;
+- cópia;
+- modificação;
+- distribuição;
+- publicação.
+
+Desde que o aviso de direitos autorais e a licença sejam mantidos.
+
+Consulte:
+
+```text
+LICENSE
+```
 
 ---
 
@@ -703,29 +844,38 @@ O protótipo ainda não possui:
 
 **Davi William**
 
-Projeto para estudo e portfólio em:
+Projeto desenvolvido para estudo e portfólio nas áreas de:
 
 - Python;
 - inteligência artificial generativa;
-- finanças;
+- planejamento financeiro;
 - análise de dados;
 - Streamlit;
-- modelos locais com Ollama.
+- Ollama;
+- modelos de linguagem locais.
 
 ---
 
-# Licença
+# Referências Oficiais
 
-Sugestão: licença MIT.
-
-Crie um arquivo `LICENSE` na raiz do projeto.
+- [Python](https://www.python.org/)
+- [Streamlit](https://docs.streamlit.io/)
+- [Ollama](https://docs.ollama.com/)
+- [Pandas](https://pandas.pydata.org/docs/)
+- [Git](https://git-scm.com/doc)
+- [Mermaid](https://mermaid.js.org/)
 
 ---
 
-# Referências
+## Dicas Finais
 
-- Python: https://www.python.org/
-- Streamlit: https://docs.streamlit.io/
-- Ollama: https://docs.ollama.com/
-- Pandas: https://pandas.pydata.org/docs/
-- Git: https://git-scm.com/doc
+1. **Comece pelo prompt:** o system prompt define o comportamento do agente
+2. **Use dados fictícios:** evite informações financeiras reais durante os testes
+3. **Teste o Ollama separadamente:** confirme que o modelo funciona antes de abrir o Streamlit
+4. **Use ambiente virtual:** evita conflito entre bibliotecas
+5. **Execute com `python -m streamlit`:** garante o uso do Python correto
+6. **Mantenha o README atualizado:** a documentação deve refletir o código real
+7. **Não envie dados sensíveis:** mantenha o projeto seguro
+8. **Teste casos reais:** simule perguntas de usuários
+9. **Registre limitações:** transparência aumenta a confiabilidade
+10. **Evolua aos poucos:** primeiro faça funcionar, depois adicione recursos
