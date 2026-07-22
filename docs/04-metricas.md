@@ -18,7 +18,7 @@ A avaliação pode ser feita de duas formas complementares:
 | **Coerência** | A resposta faz sentido para o perfil do cliente? | Sugerir investimento conservador para cliente conservador |
 
 > [!TIP]
-> Gostaria que cada pessoa testasse meu agente e avalie cada métrica com notas de 1 a 5. Isso tornaria minhas métricas mais confiáveis! Caso use os arquivos da pasta `data`, lembre-se que é um **cliente fictício** representado nesses dados. Fiquem a vontade para explorar e fazer suas modificações.
+> Gostaria que cada pessoa testasse meu agente e avaliasse cada métrica com notas de 1 a 5. Isso tornaria minhas métricas mais confiáveis! Caso use os arquivos da pasta `data`, lembre-se que é um **cliente fictício** representado nesses dados. Fiquem a vontade para explorar e fazer suas modificações.
 
 ---
 
@@ -56,6 +56,7 @@ Após os testes, registre suas conclusões:
 
 **O que funcionou bem:**
 - O agente respondeu de maneira objetiva e concisa as perguntas que foram expostas.
+- Além de explicar fielmente ao que foi perguntado, trouxe demonstrações e tebelas para facilitar o entendimento.
 
 **O que pode melhorar:**
 - Tempo de resposta (o agente pode demorar, dependendo do hardwere utilizado)
